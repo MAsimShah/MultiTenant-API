@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "MultiTenants.Web/1.0.0": {
+        "runtime": {
+          "MultiTenants.Web.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MultiTenants.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
