@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="DAL/DAL.csproj" Id="02bf5086-357a-40d5-a2a6-4a23a37faf93" />
+  <Project Path="DTO/DTO.csproj" Id="351d34e4-8563-4536-b4fc-b92778735132" />
+  <Project Path="Entities/Entities.csproj" Id="c305bca9-8508-47ee-9fc0-dbaaa380e5fa" />
   <Project Path="MultiTenants.API/MultiTenants.API.csproj" />
 </Solution>
