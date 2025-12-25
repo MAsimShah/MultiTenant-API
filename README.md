@@ -15,6 +15,8 @@ This solution contains **two main projects**:
 - Will authenticate users using **IdentityServer4**
 - Consumes secured endpoints from the Web API
 
+  Repo URL: https://github.com/Sumbal-Ayaz/MultiTenantsWeb
+
 ### 2. ASP.NET Core Web API
 - Secured using **IdentityServer4**
 - Uses **NSwag** for API documentation and client generation
