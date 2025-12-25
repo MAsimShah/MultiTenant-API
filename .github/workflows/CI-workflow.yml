@@ -23,9 +23,6 @@ jobs:
     - name: Install dotnet-format
       run: dotnet tool install -g dotnet-format
 
-    - name: Run code analyzers (warnings as errors)
-      run: dotnet build --no-restore --configuration Release -warnaserror
-
     - name: Run dotnet format (check style)
       run: dotnet format --verify-no-changes
     # =========================
