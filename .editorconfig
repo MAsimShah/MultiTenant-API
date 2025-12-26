@@ -5,17 +5,28 @@ root = true
 csharp_style_expression_bodied_methods = true:error
 csharp_style_expression_bodied_properties = true:error
 
-# -------------------------
-# Naming rules for properties
-# -------------------------
-dotnet_naming_rule.properties_should_be_pascal_case.severity = warning
-dotnet_naming_rule.properties_should_be_pascal_case.symbols = all_properties
-dotnet_naming_rule.properties_should_be_pascal_case.style = pascal_case_style
+# Explicitly enforce PascalCase for public members (properties, methods, events, etc.)
+dotnet_naming_rule.public_members_pascal_case.symbols   = public_members
+dotnet_naming_rule.public_members_pascal_case.style     = pascal_case_style
+dotnet_naming_rule.public_members_pascal_case.severity  = warning
 
-dotnet_naming_symbols.all_properties.applicable_kinds = property
-dotnet_naming_symbols.all_properties.applicable_accessibilities = public, private, protected, internal
+dotnet_naming_symbols.public_members.applicable_kinds   = property, method, event, delegate
+dotnet_naming_symbols.public_members.applicable_accessibilities = public, internal, protected, protected_internal
 
-dotnet_naming_style.pascal_case_style.capitalization = camel_case
+# Reuse your existing style
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+# Optional: Also cover types (classes, etc.) if needed
+dotnet_naming_rule.types_pascal_case.symbols   = types
+dotnet_naming_rule.types_pascal_case.style     = pascal_case_style
+dotnet_naming_rule.types_pascal_case.severity  = warning
+
+dotnet_naming_symbols.types.applicable_kinds   = class, struct, interface, enum, delegate
+dotnet_naming_symbols.types.applicable_accessibilities = *
+
+# Optional: If you want to silence IDE1006 globally (not recommended, as it disables all naming checks)
+# dotnet_diagnostic.IDE1006.severity = none
+
 
 
 # -------------------------
