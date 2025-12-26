@@ -1,10 +1,6 @@
 root = true
 
 [*.cs]
-# Indentation
-indent_style = space
-indent_size = 4
-
 # Expression-bodied members
 csharp_style_expression_bodied_methods = true:error
 csharp_style_expression_bodied_properties = true:error
@@ -21,6 +17,7 @@ dotnet_naming_symbols.all_properties.applicable_accessibilities = public, privat
 
 dotnet_naming_style.pascal_case_style.capitalization = pascal_case
 
+
 # -------------------------
 # Naming rules for injected interface fields
 # -------------------------
@@ -29,9 +26,10 @@ dotnet_naming_rule.injected_interfaces_should_start_with_underscore.symbols = in
 dotnet_naming_rule.injected_interfaces_should_start_with_underscore.style = underscore_camel_case
 
 dotnet_naming_symbols.injected_interfaces.applicable_kinds = field
-dotnet_naming_symbols.injected_interfaces.required_modifiers = readonly
 dotnet_naming_symbols.injected_interfaces.applicable_accessibilities = private
+dotnet_naming_symbols.injected_interfaces.required_modifiers = readonly
 
-dotnet_naming_style.underscore_pascal_case.required_prefix = _
-dotnet_naming_style.underscore_pascal_case.capitalization = camel_case
+dotnet_naming_style.underscore_camel_case.required_prefix = _
+dotnet_naming_style.underscore_camel_case.capitalization = camel_case
+
 
