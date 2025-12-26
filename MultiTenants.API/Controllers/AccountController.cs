@@ -39,7 +39,6 @@ namespace MultiTenants.API.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
             var result = await _userManager.CreateAsync(user, model.Password);
 
