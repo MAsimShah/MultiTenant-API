@@ -24,7 +24,7 @@ namespace MultiTenants.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (model.UserName == "Admin" && model.Email == "admin@test.com" || model.UserName == "User" && model.Email == "user@test.com")
+            if (model.Username == "Admin" && model.Email == "admin@test.com" || model.Username == "User" && model.Email == "user@test.com")
             {
                 return Ok(new { Success = true, Message = "Login successful" });
 
