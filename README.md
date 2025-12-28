@@ -1,6 +1,6 @@
-# DotNetWithIdentityServer
+# .Net with IdentityServer4
 
-DotNetWithIdentityServer is a learning-focused project built with **ASP.NET Core** that demonstrates how to secure a **Web API** using **IdentityServer4** and how a **Web application** can authenticate and consume that API.
+ASP.Net with IdentityServer4 is a learning-focused project built with **ASP.NET Core** that demonstrates how to secure a **Web API** using **IdentityServer4** and how a **Web application** can authenticate and consume that API.
 
 This project was created to better understand **authentication**, **authorization**, and **token-based security** in a multi-project ASP.NET Core environment.
 
