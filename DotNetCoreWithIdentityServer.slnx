@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DAL/DAL.csproj" />
+  <Project Path="DotNetCoreWithIdentityServer/DotNetCoreWithIdentityServer.csproj" />
+  <Project Path="DTO/DTO.csproj" />
+  <Project Path="Entities/Entities.csproj" />
+</Solution>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MultiTenants.API.Models
+namespace DotNetCoreWithIdentityServer.Models
 {
     public class LoginViewModel
     {

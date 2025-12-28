@@ -1,9 +1,9 @@
 ﻿using Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MultiTenants.API.Models;
+using DotNetCoreWithIdentityServer.Models;
 
-namespace MultiTenants.API.Controllers
+namespace DotNetCoreWithIdentityServer.Controllers
 {
     [Route("[controller]")]
     [ApiController]
