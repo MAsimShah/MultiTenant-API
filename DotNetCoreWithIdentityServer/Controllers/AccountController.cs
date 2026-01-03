@@ -1,8 +1,6 @@
 ﻿using DAL.Interfaces;
 using DotNetCoreWithIdentityServer.Models;
 using DTO;
-using Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetCoreWithIdentityServer.Controllers
@@ -13,7 +11,7 @@ namespace DotNetCoreWithIdentityServer.Controllers
     {
         private readonly IAccountServices _accountService;
 
-        public AccountController(IAccountServices accountServices, SignInManager<ApplicationUser> _signInManager)
+        public AccountController(IAccountServices accountServices)
         {
             _accountService = accountServices;
         }
