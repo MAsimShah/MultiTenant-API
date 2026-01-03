@@ -1,8 +1,10 @@
 using DAL.ApplicationContext;
 using DAL.Interfaces;
 using DAL.Repositories;
+using DotNetCoreWithIdentityServer.Models;
 using Duende.IdentityServer.Models;
 using Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,25 +23,26 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.AddIdentityServer(options =>
 {
     options.EmitStaticAudienceClaim = true;
+    options.KeyManagement.Enabled = false;
 })
 .AddAspNetIdentity<ApplicationUser>()
-.AddInMemoryApiScopes(new[]
-{
-    new ApiScope("api.read", "Read Access")
-})
-.AddInMemoryClients(new[]
-{
-    new Client
-    {
-        ClientId = "client-app",
-        AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-        ClientSecrets = { new Secret("secret".Sha256()) },
-        AllowedScopes = { "api.read" }
-    }
-})
+.AddInMemoryApiScopes(IdentityConfig.ApiScopes)
+.AddInMemoryClients(IdentityConfig.Clients)
 .AddDeveloperSigningCredential();
 
 // END - add Identity and Duende identity server
+
+// implement jwt
+
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(options => 
+//    {
+//        options.Authority = "https://localhost:5001";
+//        options.Audience = "myapi"; // match the ApiScope
+//        options.RequireHttpsMetadata = false; // set false only in dev
+//    });
+
+// end of implement jwt
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -82,7 +85,8 @@ app.MapGet("/redoc", async context =>
 });
 
 app.UseHttpsRedirection();
-
+app.UseIdentityServer();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

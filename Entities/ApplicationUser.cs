@@ -2,7 +2,7 @@
 
 namespace Entities
 {
-    public class ApplicationUser : IdentityUser
+    public sealed class ApplicationUser : IdentityUser
     {
 
     }

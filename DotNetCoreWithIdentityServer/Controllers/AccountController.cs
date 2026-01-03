@@ -1,6 +1,8 @@
 ﻿using DAL.Interfaces;
 using DotNetCoreWithIdentityServer.Models;
 using DTO;
+using Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetCoreWithIdentityServer.Controllers
@@ -11,20 +13,22 @@ namespace DotNetCoreWithIdentityServer.Controllers
     {
         private readonly IAccountServices _accountService;
 
-        public AccountController(IAccountServices accountServices)
+        public AccountController(IAccountServices accountServices, SignInManager<ApplicationUser> _signInManager)
         {
             _accountService = accountServices;
         }
 
         [HttpPost("Login")]
-        public IActionResult Login([FromBody] LoginViewModel model)
+        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (model.Username == "Admin" && model.Email == "admin@test.com" || model.Username == "User" && model.Email == "user@test.com")
+            var isAuthenticateUser = await _accountService.IsUserExists(new SignInDTO() { Email = model.Email, Password = model.Password });
+
+            if (isAuthenticateUser)
             {
                 return Ok(new { Success = true, Message = "Login successful" });
 
