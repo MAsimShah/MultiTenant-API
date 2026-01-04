@@ -85,10 +85,10 @@ These commands create tables such as AspNetUsers, AspNetRoles, PersistedGrants, 
 ## 🚀 Running the Project
 1. Update appsettings.json with your PostgreSQL connection string
 
-```bash
-"ConnectionStrings": {
-  "DefaultConnection": "Host=localhost;Database=YourDbName;Username=postgres;Password=yourpassword"
-}
+   ```bash
+   "ConnectionStrings": {
+      "DefaultConnection": "Host=localhost;Database=YourDbName;Username=postgres;Password=yourpassword"
+   }
 
 2. Apply migrations (commands above)
 3. Run the API project
