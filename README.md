@@ -80,7 +80,7 @@ The project uses **PostgreSQL** with two separate contexts sharing the same data
   Add-Migration "InitialIdentityServerPersistedGrants" -Context PersistedGrantDbContext -OutputDir Data/Migrations/IdentityServer
   Update-Database -Context PersistedGrantDbContext
 
-These commands create tables such as AspNetUsers, AspNetRoles, PersistedGrants, DeviceCodes, and Keys.
+- These commands create tables such as AspNetUsers, AspNetRoles, PersistedGrants, DeviceCodes, and Keys.
 
 🚀 ## Running the Project
 1. Update appsettings.json with your PostgreSQL connection string
