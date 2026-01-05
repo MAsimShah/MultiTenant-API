@@ -76,7 +76,7 @@ builder.Services.AddOpenApiDocument(config =>
         Type = NSwag.OpenApiSecuritySchemeType.OAuth2,
         Flow = NSwag.OpenApiOAuth2Flow.Password,
         TokenUrl = "https://localhost:5001/connect/token",
-        Scopes = new System.Collections.Generic.Dictionary<string, string>
+        Scopes = new Dictionary<string, string>
         {
             { "myapi", "Access My API" }
         }

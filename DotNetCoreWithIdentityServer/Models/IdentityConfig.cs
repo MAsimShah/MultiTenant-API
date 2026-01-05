@@ -26,17 +26,16 @@ namespace DotNetCoreWithIdentityServer.Models
                     ClientSecrets = {
                         new Secret("secret".Sha256())
                     },
-                   
-                    // AllowedGrantTypes = GrantTypes.Code,
+
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword, // allows username+password login
-                    AccessTokenLifetime = 3600, // 1 hour
+                    AccessTokenLifetime = 60, // one minute
                     RefreshTokenUsage = TokenUsage.OneTimeOnly,
                     RefreshTokenExpiration = TokenExpiration.Sliding,
-                    SlidingRefreshTokenLifetime = 1296000, // 15 days
+                    SlidingRefreshTokenLifetime = 180, // 3 minute
                     AllowOfflineAccess = true,
 
                     RedirectUris = { "https://localhost:5002/signin-oidc" },
-                    AllowedScopes = { "openid", "profile", "myapi" }
+                    AllowedScopes = { "openid", "profile", "myapi", "offline_access" }
                 }
             };
     }

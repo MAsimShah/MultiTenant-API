@@ -35,7 +35,8 @@ namespace DotNetCoreWithIdentityServer.Controllers
                 {
                     access_token = token.AccessToken,
                     expires_in = token.ExpiresIn,
-                    token_type = token.TokenType
+                    token_type = token.TokenType,
+                    refresh_token = token.RefreshToken
                 });
             }
 
